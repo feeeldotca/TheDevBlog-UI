@@ -1,0 +1,23 @@
+<div class="container">
+    <br><br>
+    <h1>All Blog Posts</h1>
+    <br><br>
+    <table class="table" *ngFor="let post of posts">
+        <thead>
+            <tr>
+                <th>{{post.title}}</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{post.summary}}</td>
+                <td [width]="50"><a [routerLink]="['/admin/posts', post.id]">View</a></td>
+            </tr>
+            <tr>
+                <td>{{post.featuredImageUrl}}<img [src]="post.featuredImageUrl"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
