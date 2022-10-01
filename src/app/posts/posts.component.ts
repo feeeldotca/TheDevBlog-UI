@@ -13,13 +13,13 @@ export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
 
-  post: Post|undefined;
+  // post: Post|undefined;
 
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe(
       response => {
         this.posts = response;
-        this.post = response[0];
+        // this.post = response[0];
       }
     )
   }

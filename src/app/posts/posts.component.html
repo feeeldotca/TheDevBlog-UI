@@ -1,0 +1,15 @@
+<div class="container" *ngFor="let post of posts">
+    <div class="card" style="width: 18rem;">
+        <img [src]="post.featuredImageUrl" class="card-img-top" alt="post.featuredImageUrl">
+        <div class="card-body">
+            <h2 class="card-title">{{post.title}}</h2>
+            <article class="card-text" [innerHTML]="post.content" *ngIf="post.visible"></article>>
+            <article class="card-text" [innerHTML]="post.summary"></article>
+            <p class="card-text">Published on: {{post.publishDate}}</p>
+            <p class="card-text">Updated on: {{ post.updateDate}} </p>
+            <p class="card-text"> {{post.urlHandle}} </p>
+            <p><input type="checkbox" class="form-check-input" [(ngModel)]="post.visible"></p>
+            <a class="btn btn-primary" [routerLink]="['/post', post.id]">View Post</a>
+        </div>
+    </div>
+</div>
